@@ -2,7 +2,6 @@
 
 #include "main.h"
 
-/* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void fill_modes_array();
@@ -66,7 +65,7 @@ static void fill_modes_array()
 
 void apply_wheel_mode(void)
 {
-	GPIOE->ODR |= (uint32_t)GPIO_PIN_8;
+    GPIOE->ODR |= (uint32_t)GPIO_PIN_8;
     delay(100000);
     GPIOE->ODR |= (uint32_t)GPIO_PIN_9;
     delay(100000);
@@ -118,8 +117,8 @@ void apply_all_on_off_mode(void)
 
 void apply_same_color_mode(void)
 {
-	GPIOE->ODR &= ~((uint32_t)(GPIO_PIN_10|GPIO_PIN_14));
-	GPIOE->ODR |= (uint32_t)(GPIO_PIN_9|GPIO_PIN_13);
+    GPIOE->ODR &= ~((uint32_t)(GPIO_PIN_10|GPIO_PIN_14));
+    GPIOE->ODR |= (uint32_t)(GPIO_PIN_9|GPIO_PIN_13);
 
     delay(1000000);
 
@@ -141,8 +140,8 @@ void apply_same_color_mode(void)
 
 void apply_odd_even_mode(void)
 {
-	GPIOE->ODR &= ~((uint32_t)(GPIO_PIN_8|GPIO_PIN_10|GPIO_PIN_12|GPIO_PIN_14));
-	GPIOE->ODR |= (uint32_t)(GPIO_PIN_9|GPIO_PIN_11|GPIO_PIN_13|GPIO_PIN_15);
+    GPIOE->ODR &= ~((uint32_t)(GPIO_PIN_8|GPIO_PIN_10|GPIO_PIN_12|GPIO_PIN_14));
+    GPIOE->ODR |= (uint32_t)(GPIO_PIN_9|GPIO_PIN_11|GPIO_PIN_13|GPIO_PIN_15);
 
     delay(1000000);
 
